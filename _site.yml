@@ -1,0 +1,18 @@
+name: "dv2"
+title: "Data Analytics_dv2"
+description: |
+  ISSS608 Visual Analytics & Applications (EO) DV2_backup page
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+      
+  left:
+    - text: "DataViz Makeover"
+      menu:
+      - text: "Dataviz Makeover 2"
+        href: DataViz\dv2.html
+output: distill::distill_article

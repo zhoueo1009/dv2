@@ -1,0 +1,10 @@
+---
+title: "About this site"
+description: |
+  This website consists of data visualization makeover 2 Assignment during the AS2021-2022 TERM 2. I hope you enjoy it. 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+

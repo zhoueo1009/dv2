@@ -1,0 +1,21 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "This website consists of data visualization makeover 2 Assignment during the AS2021-2022 TERM 2. I hope you enjoy it. ",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-03-28T02:50:29+08:00"
+    },
+    {
+      "path": "index.html",
+      "title": "DataViz Makeover Assignment 2 ",
+      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\r\n\r\n\r\n\r\n",
+      "last_modified": "2022-03-28T02:47:43+08:00"
+    }
+  ],
+  "collections": []
+}
