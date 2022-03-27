@@ -12,7 +12,7 @@ output: distill::distill_article
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, out.width="300px")
+knitr::opts_chunk$set(echo = FALSE, fig.width = 7)
 ```
 
 
@@ -29,7 +29,8 @@ for(p in packages){
 
 
 ### 1. Critique
-The original visualization is as follows: ![](images/origin_1.png)
+The original visualization is as follows: 
+![](images/origin_1.png)
 
 Definition:
 
@@ -74,7 +75,7 @@ The proposed alternative visualization is trying to make adjustment from followi
 
 2. Adjacency Matrix: The purpose of the matrix is to show comparison of inter- and intrazonal trips in January 2022. Fill the chart with colors would help increase the readability of the matrix. 
 
-3. Add choropeth map to further enhance the clarity of the dashboard, helping users interpret the data from a more accessible geographical perspective.
+3. Add choropleth map to further enhance the clarity of the dashboard, helping users interpret the data from a more accessible geographical perspective.
 
 #### Aesthetic
 
@@ -82,7 +83,7 @@ The proposed alternative visualization is trying to make adjustment from followi
 
 2. Adjacency Matrix: Add color shades to help differentiate the numbers and help users compare the data. 
 
-3. Choropeth map: Increase the accessibility of the design.
+3. choropleth map: Increase the accessibility of the design.
 
 
 ### 3. Proposed visualization
@@ -90,19 +91,54 @@ The proposed alternative visualization is trying to make adjustment from followi
 Please view the interactive visualization on [here]()
 
 
+
 ### 4.Step-by-step Guide
 
 
 #### 4.1 Prepare the dataset
-tableau
 
+![](images/1.1.png)
+
+1. Import the spatial file *MP14_SUBZONE_WEB_PL.shp*. 
+2. Click add, choose csv file *origin_destination_bus__SZ_202201.csv* to link to the spatial file. Drag table to the main panel.
+3. Set relationship by making subzone N = Origian Subzone, subzone N = Destination Subzone.
+4. Add filters to exclude the null value in Subzones, select **custom value list**.
+5. Set two filters, origin sz and destinations sz, click ok.
   
-#### 4.2 Plot the chart using Tableau
-**No.**|**Move**|**Action**
+#### 4.2 Plot the choropleth map using Tableau
+**No.**|**Move**|**Action**|
+-|-|--- |
+1|Create a new worksheet, rename to Map.Select geometry,longitude, latitute to the main table. A Singapore map is generated.|![](images/7.1.png)|
+2|Drag 'Origin Sz' to 'Detail' under Marks, drag 'Total Trips' to color|![](images/7.2.png)|
+3|Drag another ‘Total Trips’ to ‘Detail’. Right click and select ‘Quick Table Calculation’, then ‘Percent of Total’. We obtained the propotion of the origin sz in total trips in January|![](images/7.3.png)|
+4|Edit the Tooltip. Change the label to '% of  Total bus Trips in January' |![](images/7.4.png)|
+5|Edit the Title. Change the title into 'Choropleth Map showing the volume of the bus inter- & intrazonal trips_origin' |![](images/7.5.png)|
+6|Duplicate the sheet. Remove the origin Sz in the detail and filters, change into destination Sz. Alter the title as 'Choropleth Map showing the volume of the bus inter- & intrazonal trips_destination' |![](images/7.9.png)|
+7|Change the color of origin as purple, destination as brown.||
 
+#### 4.3 Plot the Line Chart using Tableau.
+**No.**|**Move**|**Action**|
+-|-|--- |
+1|Create a new worksheet, rename to Line Chart_origin.Select Time Per Hour, change from measure to dimension|![](images/10.0.png)|
+2|Drag Time Per Hour to Columns, Day Type and Total Trips to rows.|![](images/10.1.png)|
+3|Drag total trip into color, select purple to match with the choropleth map_origin. Drag another total trip under marks, add in table calculation and conduct percent difference calculation to show the changes of % compare to the previous hour.|![](images/10.2.png)|
+4|Edit the Tooltip. Change the label to '% Difference in Total Trips to the Previous hour' |![](images/7.4.png)|
+5|Edit the color. Select markers to 'all', change title of the sheet to 'Fluctuation of travel volumes in 24 hours'. Add Origin Sz to the filter.|![](images/10.3.png)|
+6|Duplicate the sheet. Rename the sheet as line chart_destination.Remove the origin Sz in the detail and filters, change into destination Sz. Alter the title as well. Change color to brown to match with choropleth map.|![](images/10.4.png)|
+7|Return to Origin Map sheet, Click on Filters, select 'apply to worksheets', follows by 'select worksheet', choose Line chart origin. This step is aim to create interactive filters in the dashboard.|![](images/10.5.png)|
+8|Repeat the step to establish relationship between Destination map and line chart destination. ||
 
-#### 4.3 The finalized Tableau chart.
-Here is the link to the [Tableau chart]().
+#### 4.4 Plot the Adjacency Matrix using Tableau.
+**No.**|**Move**|**Action**|
+-|-|--- |
+1|Create a new worksheet, rename to Adjacency Matrix. ||
+2|Drag Time Per Hour to Columns, Day Type and Total Trips to rows.|![](images/10.1.png)|
+3|Drag total trip into color, select purple to match with the choropleth map_origin. Drag another total trip under marks, add in table calculation and conduct percent difference calculation to show the changes of % compare to the previous hour.|![](images/10.2.png)|
+4|Edit the Tooltip. Change the label to '% Difference in Total Trips to the Previous hour' |![](images/7.4.png)|
+5|Edit the color. Select markers to 'all', change title of the sheet to 'Fluctuation of travel volumes in 24 hours'. Add Origin Sz to the filter.|![](images/10.3.png)|
+6|Duplicate the sheet. Rename the sheet as line chart_destination.Remove the origin Sz in the detail and filters, change into destination Sz. Alter the title as well. Change color to brown to match with choropleth map.|![](images/10.4.png)|
+7|Return to Origin Map sheet, Click on Filters, select 'apply to worksheets', follows by 'select worksheet', choose Line chart origin. This step is aim to create interactive filters in the dashboard.|![](images/10.5.png)|
+8|Repeat the step to establish relationship between Destination map and line chart destination. ||
 
 
 ### 5.Observations
