@@ -88,7 +88,7 @@ The proposed alternative visualization is trying to make adjustment from followi
 
 ### 3. Proposed visualization
 
-Please view the interactive visualization on [here]([https://public.tableau.com/app/profile/yiou3293/viz/dv2_16483948171100/Story1])
+Please view the interactive visualization on [Tableau](https://public.tableau.com/app/profile/yiou3293/viz/dv2_16483948171100/Story1)
 
 1. Interactive Dashboard contain subzone level bus travel data, which allows the users to select subzone areas from the right hand side filters. By the selection, the line chart and choropleth map will sync. 
 ![](images/0.1.png)
