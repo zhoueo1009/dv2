@@ -132,14 +132,26 @@ Please view the interactive visualization on [here]()
 **No.**|**Move**|**Action**|
 -|-|--- |
 1|Create a new worksheet, rename to Adjacency Matrix. ||
-2|Drag Time Per Hour to Columns, Day Type and Total Trips to rows.|![](images/10.1.png)|
-3|Drag total trip into color, select purple to match with the choropleth map_origin. Drag another total trip under marks, add in table calculation and conduct percent difference calculation to show the changes of % compare to the previous hour.|![](images/10.2.png)|
-4|Edit the Tooltip. Change the label to '% Difference in Total Trips to the Previous hour' |![](images/7.4.png)|
-5|Edit the color. Select markers to 'all', change title of the sheet to 'Fluctuation of travel volumes in 24 hours'. Add Origin Sz to the filter.|![](images/10.3.png)|
-6|Duplicate the sheet. Rename the sheet as line chart_destination.Remove the origin Sz in the detail and filters, change into destination Sz. Alter the title as well. Change color to brown to match with choropleth map.|![](images/10.4.png)|
-7|Return to Origin Map sheet, Click on Filters, select 'apply to worksheets', follows by 'select worksheet', choose Line chart origin. This step is aim to create interactive filters in the dashboard.|![](images/10.5.png)|
+2|Click on a new worksheet. Rename it as “Adjacency Matrix”. Click on the ‘Data’ card, and left click on ‘View Data’. Select ‘Create Calculated Field’.|![](images/11.0.png)|
+3|Add calculated area. Partitioned the data into 7 groups aaccording to the conditions: 
+'IF SUM([Total Trips])>1000000 THEN ">1,000,000"
+ELSEIF SUM([Total Trips])>500000 THEN "500,001-1,000,000"
+ELSEIF SUM([Total Trips])>100000 THEN "100,001-500,000"
+ELSEIF SUM([Total Trips])>50000 THEN "50,001-100,000"
+ELSEIF SUM([Total Trips])>10000 THEN "10,001-50,000"
+ELSEIF SUM([Total Trips])>5000 THEN "5,001-10,000"
+ELSE "<5,000"
+END' |![](images/11.1.png)|
+4|Drag Origin SZ to Columns, Destination SZ to Row, add total trip to color.|![](images/11.2.png)|
+6|Assign mono tone color blue-teal.|![](images/11.3.png)|
+7|Observe the Chart, realize that the points are still too small to see. Decided to change to Planning area.Adjust the size of the single cells for user friendly display.|![](images/11.4.png)|
 8|Repeat the step to establish relationship between Destination map and line chart destination. ||
 
+#### 4.5 Create dashboard and Story board on Tableau.
+**No.**|**Move**|**Action**|
+-|-|--- |
+1|Create dashboard to set layout as follows, which allows the users to select subzone areas from the right hand side filters.By the selection, the line chart and choropleth map will sync on subzone areas. |![](images/0.1.png)|
+2|Create Story to integrate Adjacency Matrix with the dashborad.|![](images/0.2.png)|
 
 ### 5.Observations
 
