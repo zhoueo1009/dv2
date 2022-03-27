@@ -88,8 +88,13 @@ The proposed alternative visualization is trying to make adjustment from followi
 
 ### 3. Proposed visualization
 
-Please view the interactive visualization on [here]()
+Please view the interactive visualization on [here]([https://public.tableau.com/app/profile/yiou3293/viz/dv2_16483948171100/Story1])
 
+1. Interactive Dashboard contain subzone level bus travel data, which allows the users to select subzone areas from the right hand side filters. By the selection, the line chart and choropleth map will sync. 
+![](images/0.1.png)
+
+2.Story board integrate two tabs, Adjacency Matrix which explore the inter- and intrazonal travel patterns on the planning area level, as well as the above mentioned dashboard.
+![](images/0.2.png)
 
 
 ### 4.Step-by-step Guide
@@ -133,15 +138,14 @@ Please view the interactive visualization on [here]()
 -|-|--- |
 1|Create a new worksheet, rename to Adjacency Matrix. ||
 2|Click on a new worksheet. Rename it as “Adjacency Matrix”. Click on the ‘Data’ card, and left click on ‘View Data’. Select ‘Create Calculated Field’.|![](images/11.0.png)|
-3|Add calculated area. Partitioned the data into 7 groups aaccording to the conditions: 
+3|Add calculated area. Partitioned the data into 7 groups according to the conditions  
 'IF SUM([Total Trips])>1000000 THEN ">1,000,000"
 ELSEIF SUM([Total Trips])>500000 THEN "500,001-1,000,000"
 ELSEIF SUM([Total Trips])>100000 THEN "100,001-500,000"
 ELSEIF SUM([Total Trips])>50000 THEN "50,001-100,000"
 ELSEIF SUM([Total Trips])>10000 THEN "10,001-50,000"
 ELSEIF SUM([Total Trips])>5000 THEN "5,001-10,000"
-ELSE "<5,000"
-END' |![](images/11.1.png)|
+ELSE "<5,000"|![](images/11.1.png)|
 4|Drag Origin SZ to Columns, Destination SZ to Row, add total trip to color.|![](images/11.2.png)|
 6|Assign mono tone color blue-teal.|![](images/11.3.png)|
 7|Observe the Chart, realize that the points are still too small to see. Decided to change to Planning area.Adjust the size of the single cells for user friendly display.|![](images/11.4.png)|
