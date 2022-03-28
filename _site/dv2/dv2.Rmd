@@ -149,20 +149,25 @@ Please view the interactive visualization on [Tableau](https://public.tableau.co
 -|-|--- |
 1|Create dashboard to set layout as follows, which allows the users to select subzone areas from the right hand side filters.By the selection, the line chart and choropleth map will sync on subzone areas. |![](images/0.1.png)|
 2|Create Story to integrate Adjacency Matrix with the dashborad.|![](images/0.2.png)|
+3|Auto assigned color Blue-Reel made a error by assigning the '<5000' partition with the darkest color. Adjusted in the end.|![](images/0.3.png)|
 
 ### 5.Observations
 
+
 #### 5.1
 
+Compare to interzonal travels, the intra zonal trips on the planning areas are significantly high. 18 among 55 planning areas carried more than one million intrazonal travels. Specially, Ang Mo Kio, Bedok, Yishun, Woodlands and Tampines, where the population density is high.
+![](images/0.4.png)|
 
 #### 5.2
 
-
+There is no surprise that the rush hours of the day is 7am and 6pm respectively in weekdays, matching the commute pattern from home to the office and vice versa. This pattern can be well observed on the line chart, however, the travel hours in the weekend are relatively evenly distributed. One interesting observation is that the emerging workplace such as raffles place,city hall, clarke quay etc. tend to have its peak only on 6pm.   
 
 #### 5.3
 
+In general, Choropleth Map shows that the patterns of inter- & intrazonal trips, where subzones are treated as origin and destination snyced greatly. Tampine East generated the highest Volume of bus trips in January, with 3,164,404 trips, it took 3.774% of the total trips. Same subzone also attracted most trips in January.
 
-#### 5.4
+
 
 
 
